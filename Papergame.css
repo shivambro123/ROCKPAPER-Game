@@ -1,0 +1,35 @@
+h2{
+text-align: center;
+font-size: 40px;   
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: -webkit-linear-gradient(#eee, #333);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.game{
+    border: 2px solid;
+    width:50%;
+    text-align: center;
+    margin: auto;
+    border-radius: 20px;        
+    padding-bottom: 10px;
+
+}
+
+
+.game h2{
+    /* color: yellow; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: red;
+}
+
+.choiceBtn{
+    margin: 2px 5px;
+    padding: 3px;
+    background-color: black;
+    color: yellow;
+    font-size: 20px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Papergame.css">
+    <title>Document</title>
+</head>
+<body> 
+    
+
+    <h2>ROCK PAPER SCISSOR GAME</h2>
+    <div class="game">
+
+<h2 id="playercon" class="gametext">Player: </h2>
+<h2 id="computercon" class="gametext">Computer: </h2>
+<h2 id="resultcon" class="gametext">Result: </h2>
+
+<button class="choiceBtn">ROCK</button>
+<button class="choiceBtn">PAPER</button>
+<button class="choiceBtn">SCISSOR</button>
+
+</div>
+
+
+    <script>
+
+        const playercontext=document.querySelector('#playercon');
+        const computercontext=document.querySelector("#computercon");
+        const resultcontext=document.querySelector('#resultcon');
+        const choicebtn=document.querySelectorAll('.choiceBtn');
+        let player;
+        let computer;
+        let result;
+
+        choicebtn.forEach(button=>button.addEventListener('click',()=>{
+            player= button.textContent;
+            computerturn();
+            playercontext.textContent=`player : ${player}`;
+            computercontext.textContent=`computer : ${computer}`;
+            resultcontext.textContent=checkWinnwer() ;
+
+
+        }))
+
+        function computerturn(){
+            const randNum = Math.floor(Math.random() * 3) + 1;
+            console.log(randNum);
+            switch(randNum){
+                case 1:
+                    computer="ROCK";
+                    break;
+
+                case 2:
+                    computer="PAPER";
+                    break;
+
+                case 3:
+                    computer="SCISSOR";
+                    break;
+            }
+
+        }
+
+        function checkWinnwer(){
+
+            if(player == computer){
+                return "Draw !!! ";
+            }
+            else if(computer == "ROCK"){
+                return (player == "PAPER") ? "You Win !" : "Better Luck !!!" ;
+            }
+            else if(computer == "PAPER"){
+                return (player == "SCISSOR") ? "You Win !" : "Better Luck !!!" ;
+            }
+            else if(computer == "SCISSOR"){
+                return (player == "ROCK") ? "Better Luck !!!" : "You Win !" ;
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
